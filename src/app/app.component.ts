@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { MovieComponent } from './components/movie/movie.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
@@ -18,9 +18,8 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
       JumbotronComponent,
       TrandingComponent,
       PlaylistComponent,
-      RouterModule
     ]
 })
 export class AppComponent {
-  title = 'Test-SimpliDots';
+  title = 'Movie-SimpliDots';
 }
