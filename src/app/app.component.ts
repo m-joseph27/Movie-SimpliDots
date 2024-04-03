@@ -4,6 +4,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { TrandingComponent } from './components/tranding/tranding.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 
 @Component({
     selector: 'app-root',
@@ -15,7 +16,8 @@ import { TrandingComponent } from './components/tranding/tranding.component';
       MovieComponent,
       NavbarComponent,
       JumbotronComponent,
-      TrandingComponent
+      TrandingComponent,
+      PlaylistComponent
     ]
 })
 export class AppComponent {
