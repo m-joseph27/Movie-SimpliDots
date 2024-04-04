@@ -81,4 +81,8 @@ export class NavbarComponent {
       },
     ];
   }
+
+  onItemClick(event: any) {
+    console.log(event);
+  }
 }
