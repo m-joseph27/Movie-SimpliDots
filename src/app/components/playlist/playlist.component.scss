@@ -1,0 +1,10 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .parent-card {
+    margin: 10px;
+    flex: 0 1 360px;
+  }
+}
