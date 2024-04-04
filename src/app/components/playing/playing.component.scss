@@ -1,4 +1,4 @@
-// .card-grid {
+// .card-container {
 //   display: grid;
 //   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 //   grid-gap: 20px;
@@ -6,13 +6,13 @@
 
 .card-container {
   display: flex;
-  flex-wrap: wrap; // This allows the cards to wrap to the next line if the container is too narrow
-  justify-content: space-around; // This will space out the cards evenly
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 15px;
 
   .parent-card {
-    margin: 30px; // Optional: to add some space between the cards
-    flex: 0 1 360px; // This allows the card to grow and shrink but not smaller than 360px
+    margin: 30px;
+    flex: 0 1 360px;
   }
 }
 
