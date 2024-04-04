@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
 @Component({
-  selector: 'app-playlist',
+  selector: 'app-playing',
   standalone: true,
   imports: [
     CardModule,
     ButtonModule,
     CommonModule
   ],
-  templateUrl: './playlist.component.html',
-  styleUrl: './playlist.component.scss'
+  templateUrl: './playing.component.html',
+  styleUrl: './playing.component.scss'
 })
-export class PlaylistComponent {
+export class PlayingComponent {
   playlists = [
     {
       header: 'Advance Card 1',
@@ -57,8 +57,4 @@ export class PlaylistComponent {
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!',
     }
   ];
-
-  constructor () {
-    
-  }
 }

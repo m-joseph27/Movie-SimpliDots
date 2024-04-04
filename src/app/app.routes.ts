@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { SearchedMovieComponent } from './pages/searched-movie/searched-movie.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: PlaylistComponent },
   { path: 'movie', component: MovieComponent },
   { path: 'series', component: FilmTVComponent },
