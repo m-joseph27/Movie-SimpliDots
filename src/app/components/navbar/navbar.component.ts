@@ -53,7 +53,6 @@ export class NavbarComponent {
       },
       {
         label: 'Series TV',
-        icon: 'pi pi-fw pi-pencil',
         items: [
           {
             label: 'Populer',
@@ -81,13 +80,27 @@ export class NavbarComponent {
             command: () => this.onItemClick('tv', 'top_rated')
           }
         ]
+      },
+      {
+        label: 'Favorite',
+        items: [
+          {
+            label: 'Film',
+            command: () => this.onItemClick('favorite', 'film')
+          },
+          {
+            separator: true
+          },
+          {
+            label: 'Series TV',
+            command: () => this.onItemClick('favorite', 'tv')
+          }
+        ]
       }
     ];
   }
 
   onItemClick(genre: string, type: string) {
-    console.log('eve', genre);
-    console.log('type', type);
     this.router.navigate([`${genre}/${type}`]);
   }
 }

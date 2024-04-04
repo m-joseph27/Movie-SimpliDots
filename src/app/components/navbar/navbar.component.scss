@@ -16,6 +16,7 @@ header {
     width: 70px;
     height: 70px;
     object-fit: cover;
+    cursor: pointer;
   }
 
   .categories {
@@ -23,10 +24,44 @@ header {
     gap: 30px;
   }
 
-  .input-nav {
-    padding: 10px 10px;
-    width: 200px;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.458);
+  .search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px 10px;
+    max-width: 300px;
   }
+  
+  .search-input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-right: 10px;
+    width: 350px;
+    flex-grow: 1;
+  }
+  
+  .search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
+  }
+  
+  .fas.fa-search {
+    color: #333;
+  }
+  
+  .search-input::placeholder {
+    color: #aaa;
+  }
+  
+  .search-input::-webkit-outer-spin-button,
+  .search-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
 }

@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { PlaylistComponent } from './pages/playlist/playlist.component';
-import { FavoriteComponent } from './pages/favorite/favorite.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { SearchedMovieComponent } from './pages/searched-movie/searched-movie.component';
 import { NowPlayingComponent } from './pages/movies/now-playing/now-playing.component';
@@ -11,6 +10,8 @@ import { AiringTodayComponent } from './pages/series-tvs/airing-today/airing-tod
 import { OnTheAirComponent } from './pages/series-tvs/on-the-air/on-the-air.component';
 import { TvPopularComponent } from './pages/series-tvs/tv-popular/tv-popular.component';
 import { TvTopRatedComponent } from './pages/series-tvs/tv-top-rated/tv-top-rated.component';
+import { MovieFavoriteComponent } from './pages/favorite/movie-favorite/movie-favorite.component';
+import { TvFavoriteComponent } from './pages/favorite/tv-favorite/tv-favorite.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,7 +24,8 @@ export const routes: Routes = [
   { path: 'tv/airing_today', component: AiringTodayComponent },
   { path: 'tv/on_the_air', component: OnTheAirComponent },
   { path: 'tv/top_rated', component: TvTopRatedComponent },
-  { path: 'favorite', component: FavoriteComponent },
+  { path: 'favorite/film', component: MovieFavoriteComponent },
+  { path: 'favorite/tv', component: TvFavoriteComponent },
   { path: 'search', component: SearchedMovieComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

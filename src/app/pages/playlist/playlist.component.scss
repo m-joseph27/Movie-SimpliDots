@@ -1,21 +1,40 @@
-.text-heading {
-  padding: 0px 50px;
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 24px;
-  color: rgba(17, 16, 16, 0.852);
-}
 
 hr {
   margin-bottom: 30px;
 }
 
 .playing-head {
+  .text-heading {
+    padding: 0px 50px;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 24px;
+    color: rgba(17, 16, 16, 0.852);
+  }  
   margin-bottom: 50px;
   .on-tranding {
     padding: 20px 20px;
   }
   .now-showing {
     padding: 20px 20px;
+  }
+
+  .line-break {
+    width: 100vw;
+    height: 15px;
+    display: flex;
+    margin-bottom: 50px;
+    .line1 {
+      width: 33.3%;
+      background-color: #00CE79;
+    }
+    .line2 {
+      width: 33.3%;
+      background-color: #FFBC3E;
+    }
+    .line3 {
+      width: 33.3%;
+      background-color: #FF6773;
+    }
   }
 }

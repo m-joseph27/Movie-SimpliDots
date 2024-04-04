@@ -1,11 +1,14 @@
 <header>
   <div>
-    <img src="../../../assets/logo-filmpedia.webp" alt="logo-filmpedia">
+    <img src="../../../assets/logo-filmpedia.webp" alt="logo-filmpedia" (click)="onItemClick('','home')">
   </div>
   <div class="categories">
     <p-menubar [model]="items"></p-menubar>
   </div>
-  <div>
-    <input class="input-nav" type="text" placeholder="search here...">
-  </div>
+  <div class="search-container">
+    <input type="text" placeholder="Search Movie / Tv Series" class="search-input">
+    <button class="search-button">
+      <i class="fas fa-search"></i> <!-- Using Font Awesome for the search icon -->
+    </button>
+  </div>  
 </header>
