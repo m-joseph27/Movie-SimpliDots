@@ -1,5 +1,4 @@
-<p>playing works!</p>
-<div class="card-grid">
+<div class="card-container">
   <div *ngFor="let playlist of playlists">
     <p-card class="parent-card" [header]="playlist.header" [subheader]="playlist.subHeader" [style]="{ width: '360px' }">
       <ng-template pTemplate="header">
