@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,31 +15,39 @@ import { MenuItem } from 'primeng/api';
 export class NavbarComponent {
   items: MenuItem[] | undefined;
 
+  constructor(
+    private router: Router
+  ) {}
+
   ngOnInit() {
     this.items = [
       {
-        label: 'Movie',
+        label: 'Film',
         items: [
           {
             label: 'Populer',
+            command: () => this.onItemClick('movie', 'popular')
           },
           {
             separator: true
           },
           {
             label: 'Sedang Diputar',
+            command: () => this.onItemClick('movie', 'now_playing')
           },
           {
             separator: true
           },
           {
             label: 'Mendatang',
+            command: () => this.onItemClick('movie', 'upcoming')
           },
           {
             separator: true
           },
           {
-            label: 'Top Rating'
+            label: 'Top Rating',
+            command: () => this.onItemClick('movie', 'top_rated')
           }
         ]
       },
@@ -48,41 +57,37 @@ export class NavbarComponent {
         items: [
           {
             label: 'Populer',
+            command: () => this.onItemClick('tv', 'popular')
           },
           {
             separator: true
           },
           {
             label: 'Sedang Tayang',
+            command: () => this.onItemClick('tv', 'airing_today')
           },
           {
             separator: true
           },
           {
             label: 'Tayang Di TV',
+            command: () => this.onItemClick('tv', 'on_the_air')
           },
           {
             separator: true
           },
           {
-            label: 'Top Rating'
+            label: 'Top Rating',
+            command: () => this.onItemClick('tv', 'top_rated')
           }
         ]
-      },
-      {
-        label: 'Orang',
-        icon: 'pi pi-fw pi-user',
-        items: [
-          {
-            label: 'Orang Populer',
-            icon: 'pi pi-fw pi-user-plus'
-          },
-        ]
-      },
+      }
     ];
   }
 
-  onItemClick(event: any) {
-    console.log(event);
+  onItemClick(genre: string, type: string) {
+    console.log('eve', genre);
+    console.log('type', type);
+    this.router.navigate([`${genre}/${type}`]);
   }
 }
