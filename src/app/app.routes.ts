@@ -10,14 +10,12 @@ import { AiringTodayComponent } from './pages/series-tvs/airing-today/airing-tod
 import { OnTheAirComponent } from './pages/series-tvs/on-the-air/on-the-air.component';
 import { TvPopularComponent } from './pages/series-tvs/tv-popular/tv-popular.component';
 import { TvTopRatedComponent } from './pages/series-tvs/tv-top-rated/tv-top-rated.component';
-import { MovieFavoriteComponent } from './pages/favorite/movie-favorite/movie-favorite.component';
-import { TvFavoriteComponent } from './pages/favorite/tv-favorite/tv-favorite.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: PlaylistComponent },
-  { path: `:media_type/:id`, component: MovieDetailComponent },
+  { path: ':media_type/:id', component: MovieDetailComponent },
   { path: 'movie/popular', component: MoviePopularComponent },
   { path: 'movie/now_playing', component: NowPlayingComponent },
   { path: 'movie/upcoming', component: UpComingComponent },
@@ -26,8 +24,6 @@ export const routes: Routes = [
   { path: 'tv/airing_today', component: AiringTodayComponent },
   { path: 'tv/on_the_air', component: OnTheAirComponent },
   { path: 'tv/top_rated', component: TvTopRatedComponent },
-  { path: 'favorite/film', component: MovieFavoriteComponent },
-  { path: 'favorite/tv', component: TvFavoriteComponent },
   { path: 'search', component: SearchedMovieComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
