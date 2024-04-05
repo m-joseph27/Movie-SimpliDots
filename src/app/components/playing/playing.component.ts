@@ -22,14 +22,6 @@ export class PlayingComponent {
     private router: Router
   ) {}
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['movies']) {
-      const currentValue = changes['movies'].currentValue;
-      if (!currentValue || (Array.isArray(currentValue) && currentValue.length === 0) || (currentValue === Object(currentValue) && Object.keys(currentValue).length === 0)) {
-      }
-    }
-  }
-
   onCardClick(event: any) {
     this.router.navigate([`${event.genre}`])
   }

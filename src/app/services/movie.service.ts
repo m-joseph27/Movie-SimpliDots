@@ -12,8 +12,8 @@ export class MovieServices {
   constructor(private http: HttpClient) {}
 
 
-  getAllMovies(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/movie/now_playing?language=id-ID&page=1`);
+  getAllMovies(page: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/now_playing?language=id-ID&page=${page}`);
   }
 
   getTrendingMovies(): Observable<any> {
