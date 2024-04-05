@@ -22,7 +22,7 @@ export class PlayingComponent {
     private router: Router
   ) {}
 
-  onCardClick(event: any) {
-    this.router.navigate([`${event.genre}`])
+  onCardClick(movie: any) {
+    this.router.navigate([`movie/${movie.id}`]);
   }
 }
