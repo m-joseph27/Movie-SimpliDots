@@ -12,7 +12,7 @@
       <div class="desc-container">
         <div class="title-head">
           <div class="title">
-            <h1>{{ movieDetail.name || movieDetail.title }} <span>({{ movieDetail.first_air_date || movieDetail.release_date }})</span></h1>
+            <h1>{{ movieDetail.name || movieDetail.title }} <span>({{ getYear(movieDetail.first_air_date || movieDetail.release_date) }})</span></h1>
             <p>{{ formatDate(movieDetail.first_air_date || movieDetail.release_date) }} - <span>{{ movieDetail?.genres[0].name }}</span> </p>
           </div>
         </div>
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="caster">
     <h3>Pemeran</h3>
   </div>
   <div class="line-break">
@@ -46,7 +46,9 @@
   </div>
 
   <div class="caster-info">
-    <div class="caster"></div>
+    <div class="caster">
+      <app-tranding [data]="credits"></app-tranding>
+    </div>
     <div class="info"></div>
   </div>
 </div>

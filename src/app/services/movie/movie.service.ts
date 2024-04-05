@@ -23,4 +23,8 @@ export class MovieServices {
   getDetailMovie(media_type: string, movie_id: number | number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${media_type}/${movie_id}?language=en-US`);
   }
+
+  getCredits(media_type: string, movie_id: number | number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${media_type}/${movie_id}/credits?language=en-US`);
+  }
 }

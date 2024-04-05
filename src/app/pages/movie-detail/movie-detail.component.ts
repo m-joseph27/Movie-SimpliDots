@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { LocalStorageService } from '../../services/local-storage/local-storage.service';
+import { TrandingComponent } from '../../components/tranding/tranding.component';
 
 @Component({
   selector: 'app-movie-detail',
@@ -14,7 +15,8 @@ import { LocalStorageService } from '../../services/local-storage/local-storage.
     FooterComponent,
     HttpClientModule,
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    TrandingComponent
   ],
   templateUrl: './movie-detail.component.html',
   styleUrl: './movie-detail.component.scss',
@@ -23,6 +25,7 @@ import { LocalStorageService } from '../../services/local-storage/local-storage.
 
 export class MovieDetailComponent {
   movieDetail: any = {};
+  credits: any[] = [];
   params: any = {};
   formattedDate: any;
 
@@ -39,6 +42,7 @@ export class MovieDetailComponent {
   ngOnInit() {
     this.params = Object.assign(this.route.snapshot.paramMap);
     this.getDetailMovie();
+    this.getCreditsMovie();
   }
 
   checkMovieStatus() {
@@ -62,9 +66,16 @@ export class MovieDetailComponent {
     });
   }
 
-  // getYear(dateString: string): string {
-  //   return dateString.substring(0, 4);
-  // }
+  getCreditsMovie() {
+    this.movieServices.getCredits(this.params.params.media_type, this.params.params.id).subscribe(credit => {
+      this.credits = credit.cast;
+      console.log('credit', this.credits);
+    });
+  }
+
+  getYear(dateString: string): string {
+    return dateString.substring(0, 4);
+  }
 
   formatDate(date: any) {
     return this.datePipe.transform(date, 'dd/MM/yyyy');
