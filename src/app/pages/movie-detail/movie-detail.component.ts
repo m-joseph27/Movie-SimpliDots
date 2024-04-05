@@ -50,6 +50,11 @@ export class MovieDetailComponent {
     this.isAdded = true;
   }
 
+  deleteFavorite() {
+    this.localStorageService.removeMovie('favorites', this.movieDetail.id);
+    this.isAdded = false;
+  }
+
   getDetailMovie() {
     this.movieServices.getDetailMovie(this.params.params.media_type, this.params.params.id).subscribe(movie => {
       this.movieDetail = Object.assign(movie);
@@ -57,9 +62,9 @@ export class MovieDetailComponent {
     });
   }
 
-  getYear(dateString: string): string {
-    return dateString.substring(0, 4);
-  }
+  // getYear(dateString: string): string {
+  //   return dateString.substring(0, 4);
+  // }
 
   formatDate(date: any) {
     return this.datePipe.transform(date, 'dd/MM/yyyy');

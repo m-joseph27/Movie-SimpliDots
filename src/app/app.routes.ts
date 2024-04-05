@@ -11,11 +11,13 @@ import { OnTheAirComponent } from './pages/series-tvs/on-the-air/on-the-air.comp
 import { TvPopularComponent } from './pages/series-tvs/tv-popular/tv-popular.component';
 import { TvTopRatedComponent } from './pages/series-tvs/tv-top-rated/tv-top-rated.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import { FavoriteComponent } from './pages/favorite/favorite.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: PlaylistComponent },
   { path: ':media_type/:id', component: MovieDetailComponent },
+  { path: 'favorite', component: FavoriteComponent },
   { path: 'movie/popular', component: MoviePopularComponent },
   { path: 'movie/now_playing', component: NowPlayingComponent },
   { path: 'movie/upcoming', component: UpComingComponent },

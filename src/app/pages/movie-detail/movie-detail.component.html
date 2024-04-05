@@ -12,14 +12,14 @@
       <div class="desc-container">
         <div class="title-head">
           <div class="title">
-            <h1>{{ movieDetail.name || movieDetail.title }} <span>({{ getYear(movieDetail.first_air_date || movieDetail.release_date)}})</span></h1>
+            <h1>{{ movieDetail.name || movieDetail.title }} <span>({{ movieDetail.first_air_date || movieDetail.release_date }})</span></h1>
             <p>{{ formatDate(movieDetail.first_air_date || movieDetail.release_date) }} - <span>{{ movieDetail?.genres[0].name }}</span> </p>
           </div>
         </div>
         <div class="action">
           <div class="add-to-fav">
             <p-button *ngIf="!isAdded" (click)="addFavorite()" severity="info" label="Tambahkan Ke Favorite" icon="pi pi-check"></p-button>
-            <p-button *ngIf="isAdded" [disabled] severity="success" label="Ditambahkan Ke Favorite" icon="pi pi-check"></p-button>
+            <p-button *ngIf="isAdded" (onClick)="deleteFavorite()" severity="danger" label="Hapus Dari Favorite" icon="pi pi-check"></p-button>
           </div>
         </div>
         <div class="desc-info">
