@@ -12,17 +12,6 @@ import { MovieServices } from '../../../services/movie/movie.service';
   styleUrl: './movie-popular.component.scss',
   providers: [ MovieServices ]
 })
-export class MoviePopularComponent implements OnInit {
+export class MoviePopularComponent {
 
-  constructor(
-    private movieServices: MovieServices,
-  ) {}
-
-  ngOnInit() {
-    
-  }
-
-  // getDetailMovie() {
-  //   this.movieServices.getDetailMovie().subscribe(movie => {console.log('movie', movie)});
-  // }
 }
