@@ -1,12 +1,12 @@
 <div class="card-container">
-  <div *ngFor="let playlist of playlists">
-    <p-card class="parent-card" [header]="playlist.header" [subheader]="playlist.subHeader" [style]="{ width: '360px' }">
+  <div *ngFor="let movie of movies">
+    <p-card class="parent-card" [header]="movie.title || movie.name" [subheader]="movie.release_date || movie.first_air_date" [style]="{ width: '360px' }">
       <ng-template pTemplate="header">
-        <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+        <img [alt]="movie.title" src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" />
       </ng-template>
-      <p>{{ playlist.description }}</p>
+      <p>{{ movie.overview || movie.title }}</p>
       <ng-template pTemplate="footer">
-        <p-button label="Detail" icon="pi pi-check" (onClick)="onCardClick(playlist)"></p-button>
+        <p-button label="Detail" icon="pi pi-check" (onClick)="onCardClick(movie)"></p-button>
       </ng-template>
     </p-card>
   </div>

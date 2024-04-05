@@ -3,7 +3,9 @@
 //   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 //   grid-gap: 20px;
 // }
-
+.p-component {
+  width: 400px !important;
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -13,6 +15,21 @@
   .parent-card {
     margin: 30px;
     flex: 0 1 360px;
+    img {
+      width: 400px;
+      height: 500px;
+      border-radius: 10px;
+      -webkit-filter: brightness(65%);
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+      transition: all 1s ease;
+    }
+  
+    img:hover {
+      -webkit-filter: brightness(100%);
+    }
   }
 }
 

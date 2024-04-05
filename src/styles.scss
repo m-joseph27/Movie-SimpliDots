@@ -24,3 +24,29 @@ body {
   background: white !important;
   border: none !important;
 }
+
+.p-card {
+  width: 400px !important;
+  height: 820px !important;
+}
+.p-card-body {
+  display: flex;
+  flex-direction: column;
+  height: 285px;
+  padding-bottom: 0;
+}
+
+.p-card-content{
+  // padding-top: 0;
+  // padding-bottom: 10px;
+  // width: 250px; /* Atur lebar maksimum teks */
+  // white-space: nowrap; /* Pastikan teks tidak berganti baris */
+  overflow: hidden; /* Sembunyikan teks yang melebihi batas */
+  text-overflow: ellipsis;
+  height: 130px;
+}
+
+.p-card-footer {
+  padding-top: 0;
+  margin-top: auto;
+}

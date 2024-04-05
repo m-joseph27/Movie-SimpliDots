@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { JumbotronComponent } from '../../components/jumbotron/jumbotron.component';
 import { TrandingComponent } from '../../components/tranding/tranding.component';
 import { PlayingComponent } from '../../components/playing/playing.component';
@@ -21,13 +21,12 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [ MovieServices ]
 })
 export class PlaylistComponent implements OnInit {
+  trending: any[] | undefined;
+  movies: any[] | undefined;
+
   constructor(
     private movieServices: MovieServices,
   ) {}
-
-  // movies;
-  trending: any[] | undefined;
-  movies: any[] | undefined;
 
   ngOnInit() {
     this.loadAllMovies();
@@ -36,13 +35,12 @@ export class PlaylistComponent implements OnInit {
 
   loadAllMovies() {
     this.movieServices.getAllMovies().subscribe(data => {
-      this.movies?.push(data);
+      this.movies = data.results;
     });
   }
 
   loadTrandingMovies() {
     this.movieServices.getTrendingMovies().subscribe(tren => {
-      // this.trending?.push(tren.results);
       this.trending = tren.results;
     });
   }
