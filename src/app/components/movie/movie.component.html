@@ -1,9 +1,0 @@
-<!-- src/app/movie/movie.component.html -->
-
-<div class="movie"  *ngFor="let movie of movies">
-  <h2>{{ movie.title }}</h2>
-  <p>{{ movie.description }}</p>
-  <button mat-button (click)="toggleFavorite(movie.id)">
-    {{ movie.favorite ? 'Unfavorite' : 'Favorite' }}
-  </button>
-</div>

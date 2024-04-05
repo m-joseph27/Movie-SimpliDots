@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
@@ -14,7 +14,8 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './tranding.component.html',
   styleUrl: './tranding.component.scss'
 })
-export class TrandingComponent {
+export class TrandingComponent implements OnChanges {
+  @Input() data: any;
   movies = [
     {
       id: '1000',
@@ -82,13 +83,25 @@ export class TrandingComponent {
 
   constructor () {}
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['data']) {
+      const currentValue = changes['data'].currentValue;
+      if (!currentValue || (Array.isArray(currentValue) && currentValue.length === 0) || (currentValue === Object(currentValue) && Object.keys(currentValue).length === 0)) {
+        console.log('Data @Input kosong atau tidak terdefinisi');
+      } else {
+        console.log('Data @Input ada');
+        console.log('data', this.data);
+      }
+    }
+  }
+
   getSeverity(status: string): any {
     switch (status) {
-      case 'INSTOCK':
+      case '42.489':
         return 'success';
-      case 'LOWSTOCK':
+      case '42.482':
         return 'warning';
-      case 'OUTOFSTOCK':
+      case '42.481':
         return 'danger';
     }
   }

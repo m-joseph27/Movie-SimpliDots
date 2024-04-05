@@ -1,43 +1,22 @@
-// src/app/movie.service.ts
-
 import { Injectable } from '@angular/core';
-import { Movie } from '../models/movie';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MovieService {
-  private movies: Movie[] = [
-    {
-      id: 1,
-      title: 'Film 1',
-      description: 'Deskripsi film 1',
-      favorite: false
-    },
-    {
-      id: 2,
-      title: 'Film 2',
-      description: 'Deskripsi film 2',
-      favorite: false
-    },
-    {
-      id: 3,
-      title: 'Film 3',
-      description: 'Deskripsi film 1',
-      favorite: false
-    },
-  ];
+export class MovieServices {
+  private baseUrl = environment.apiUrl;
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
-  getMovies(): Movie[] {
-    return this.movies;
+
+  getAllMovies(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/now_playing?language=id-ID&page=1`);
   }
 
-  toggleFavorite(id: number): void {
-    const movie = this.movies.find(m => m.id === id);
-    if (movie) {
-      movie.favorite = !movie.favorite;
-    }
+  getTrendingMovies(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/trending/all/day?language=en-US`);
   }
 }
