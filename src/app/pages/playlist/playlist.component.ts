@@ -3,7 +3,7 @@ import { JumbotronComponent } from '../../components/jumbotron/jumbotron.compone
 import { TrandingComponent } from '../../components/tranding/tranding.component';
 import { PlayingComponent } from '../../components/playing/playing.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { MovieServices } from '../../services/movie.service';
+import { MovieServices } from '../../services/movie/movie.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({

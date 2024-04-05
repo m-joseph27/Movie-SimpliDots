@@ -12,10 +12,12 @@ import { TvPopularComponent } from './pages/series-tvs/tv-popular/tv-popular.com
 import { TvTopRatedComponent } from './pages/series-tvs/tv-top-rated/tv-top-rated.component';
 import { MovieFavoriteComponent } from './pages/favorite/movie-favorite/movie-favorite.component';
 import { TvFavoriteComponent } from './pages/favorite/tv-favorite/tv-favorite.component';
+import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: PlaylistComponent },
+  { path: `:media_type/:id`, component: MovieDetailComponent },
   { path: 'movie/popular', component: MoviePopularComponent },
   { path: 'movie/now_playing', component: NowPlayingComponent },
   { path: 'movie/upcoming', component: UpComingComponent },

@@ -27,6 +27,7 @@ export class TrandingComponent implements OnChanges {
   ngOnChanges() {}
 
   onDetailClick(movie: any) {
-    this.router.navigate([`${movie.media_type}/popular`]);
+    console.log('mov', movie);
+    this.router.navigate([`${movie.media_type}/${movie.id}`]);
   }
 }

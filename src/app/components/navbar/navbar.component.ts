@@ -85,16 +85,9 @@ export class NavbarComponent {
         label: 'Favorite',
         items: [
           {
-            label: 'Film',
-            command: () => this.onItemClick('favorite', 'film')
+            label: 'List Favorite',
+            command: () => this.onItemClick('favorite', '')
           },
-          {
-            separator: true
-          },
-          {
-            label: 'Series TV',
-            command: () => this.onItemClick('favorite', 'tv')
-          }
         ]
       }
     ];
