@@ -73,7 +73,6 @@ export class MovieDetailComponent {
   getCreditsMovie() {
     this.movieServices.getCredits(this.params.params.media_type, this.params.params.id).subscribe(credit => {
       this.credits = credit.cast;
-      console.log('credit', this.credits);
     });
   }
 
