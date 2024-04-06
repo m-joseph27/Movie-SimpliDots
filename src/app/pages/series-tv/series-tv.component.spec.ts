@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OnTheAirComponent } from './on-the-air.component';
+import { SeriesTvComponent } from './series-tv.component';
 
-describe('OnTheAirComponent', () => {
-  let component: OnTheAirComponent;
-  let fixture: ComponentFixture<OnTheAirComponent>;
+describe('SeriesTvComponent', () => {
+  let component: SeriesTvComponent;
+  let fixture: ComponentFixture<SeriesTvComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OnTheAirComponent]
+      imports: [SeriesTvComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(OnTheAirComponent);
+    fixture = TestBed.createComponent(SeriesTvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

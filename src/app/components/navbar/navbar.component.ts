@@ -26,28 +26,28 @@ export class NavbarComponent {
         items: [
           {
             label: 'Populer',
-            command: () => this.onItemClick('movie', 'popular')
+            command: () => this.onItemClick('film', 'movie', 'popular')
           },
           {
             separator: true
           },
           {
             label: 'Sedang Diputar',
-            command: () => this.onItemClick('movie', 'now_playing')
+            command: () => this.onItemClick('film', 'movie', 'now_playing')
           },
           {
             separator: true
           },
           {
             label: 'Mendatang',
-            command: () => this.onItemClick('movie', 'upcoming')
+            command: () => this.onItemClick('film' ,'movie', 'upcoming')
           },
           {
             separator: true
           },
           {
             label: 'Top Rating',
-            command: () => this.onItemClick('movie', 'top_rated')
+            command: () => this.onItemClick('film', 'movie', 'top_rated')
           }
         ]
       },
@@ -56,28 +56,28 @@ export class NavbarComponent {
         items: [
           {
             label: 'Populer',
-            command: () => this.onItemClick('tv', 'popular')
+            command: () => this.onItemClick('series', 'tv', 'popular')
           },
           {
             separator: true
           },
           {
             label: 'Sedang Tayang',
-            command: () => this.onItemClick('tv', 'airing_today')
+            command: () => this.onItemClick('series', 'tv', 'airing_today')
           },
           {
             separator: true
           },
           {
             label: 'Tayang Di TV',
-            command: () => this.onItemClick('tv', 'on_the_air')
+            command: () => this.onItemClick('series', 'tv', 'on_the_air')
           },
           {
             separator: true
           },
           {
             label: 'Top Rating',
-            command: () => this.onItemClick('tv', 'top_rated')
+            command: () => this.onItemClick('series', 'tv', 'top_rated')
           }
         ]
       },
@@ -86,14 +86,14 @@ export class NavbarComponent {
         items: [
           {
             label: 'List Favorite',
-            command: () => this.onItemClick('favorite', '')
+            command: () => this.onItemClick('favorite', '', '')
           },
         ]
       }
     ];
   }
 
-  onItemClick(genre: string, type: string) {
-    this.router.navigate([`${genre}/${type}`]);
+  onItemClick(movie_type: string, genre: string, type: string) {
+    return this.router.navigate([`${movie_type}/${genre}/${type}`]);
   }
 }

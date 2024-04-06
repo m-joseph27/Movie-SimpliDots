@@ -52,3 +52,22 @@ body {
 .p-toast {
   margin-top: 80px;
 }
+
+.line-break {
+  width: 100vw;
+  height: 15px;
+  display: flex;
+  margin-bottom: 50px;
+  .line1 {
+    width: 33.3%;
+    background-color: #00CE79;
+  }
+  .line2 {
+    width: 33.3%;
+    background-color: #FFBC3E;
+  }
+  .line3 {
+    width: 33.3%;
+    background-color: #FF6773;
+  }
+}

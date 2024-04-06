@@ -1,0 +1,16 @@
+<div class="movies-wrapper">
+  <div>
+    <h3>{{ movieStatus[2]?.path }}</h3>
+  </div>
+  <div class="line-break">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+
+  <div class="movies-card">
+    <app-playing [movies]="allMovies.results"></app-playing>
+  </div>
+
+</div>
+<app-footer></app-footer>
