@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlayingComponent } from '../../components/playing/playing.component';
 import { MovieServices } from '../../services/movie/movie.service';
 import { ActivatedRoute } from '@angular/router';
@@ -7,6 +7,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { FormatTitlePipe } from '../../services/formater/formatter.pipe';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie',
@@ -27,7 +28,7 @@ export class MovieComponent implements OnInit {
   
   allMovies: any = [];
   params: any = {};
-  movieStatus: any[] = [];
+  movieStatus: any;
   spinning: boolean = true;
 
   constructor(
@@ -38,7 +39,18 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
     this.params = Object.assign(this.route.snapshot.paramMap);
     this.getMovies();
-    this.movieStatus = this.route.snapshot.url;
+
+    this.route.params.pipe(
+      switchMap(params => {
+        this.params = params;
+        this.spinning = true;
+        this.movieStatus = params['id'];
+        return this.movieServices.getMovies(params['media_type'], params['id']);
+      })
+    ).subscribe((movies: any) => {
+      this.allMovies = movies.results;
+      this.spinning = false;
+    });
   }
 
   getMovies() {

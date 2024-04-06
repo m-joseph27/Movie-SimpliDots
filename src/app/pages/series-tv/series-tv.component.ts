@@ -7,14 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CommonModule } from '@angular/common';
 import { FormatTitlePipe } from '../../services/formater/formatter.pipe';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-series-tv',
   standalone: true,
   imports: [
+    HttpClientModule,
     PlayingComponent,
     FooterComponent,
-    HttpClientModule,
     ProgressSpinnerModule,
     CommonModule,
     FormatTitlePipe
@@ -26,7 +27,7 @@ import { FormatTitlePipe } from '../../services/formater/formatter.pipe';
 export class SeriesTvComponent {
   allMovies: any = [];
   params: any = {};
-  movieStatus: any[] = [];
+  movieStatus: any;
   spinning: boolean = true;
 
   constructor(
@@ -37,13 +38,24 @@ export class SeriesTvComponent {
   ngOnInit() {
     this.params = Object.assign(this.route.snapshot.paramMap);
     this.getMovies();
-    this.movieStatus = this.route.snapshot.url;
+
+    this.route.params.pipe(
+      switchMap(params => {
+        this.params = params;
+        this.spinning = true;
+        this.movieStatus = params['id'];
+        return this.movieServices.getMovies(params['media_type'], params['id']);
+      })
+    ).subscribe((movies: any) => {
+      this.allMovies = movies.results;
+      this.spinning = false;
+    });
   }
 
   getMovies() {
-    this.movieServices.getMovies(this.params.params.media_type, this.params.params.id).subscribe(movies => {
-      this.allMovies = movies;
+    this.movieServices.getMovies(this.params.params.media_type, this.params.params.id).subscribe((movies: any) => {
+      this.allMovies =  movies.results;
       this.spinning = false;
-    })
+    });
   }
 }

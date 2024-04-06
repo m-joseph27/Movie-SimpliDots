@@ -1,6 +1,6 @@
 <div class="movies-wrapper">
   <div>
-    <h3>{{ movieStatus[2]?.path | formatTitle }}</h3>
+    <h3>{{ movieStatus | formatTitle }}</h3>
   </div>
   <div class="line-break">
     <div class="line1"></div>
@@ -13,7 +13,7 @@
       <p-progressSpinner *ngIf="spinning"></p-progressSpinner>
     </div>
     <div *ngIf="!spinning">
-      <app-playing [movies]="allMovies.results"></app-playing>
+      <app-playing [movies]="allMovies"></app-playing>
     </div>
   </div>
 
