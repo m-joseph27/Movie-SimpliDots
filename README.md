@@ -26,5 +26,6 @@ $ npm run start:dev
 - point 1 (a, b, c, d) ✅
 - point 3 ✅
 - point 4 ✅
+- point 6 ✅
 - point 7 ✅
 ```
