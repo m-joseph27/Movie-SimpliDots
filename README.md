@@ -16,3 +16,15 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 ```
+
+## Point Yang Dikerjakan
+```bash
+# Kriteria Wajib
+- point 1 sampai 10 ✅✅
+
+# Optional Task
+- point 1 (a, b, c, d) ✅
+- point 3 ✅
+- point 4 ✅
+- point 7 
+```
