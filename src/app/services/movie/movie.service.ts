@@ -11,7 +11,6 @@ export class MovieServices {
 
   constructor(private http: HttpClient) {}
 
-
   getAllMovies(page: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/movie/now_playing?language=en-US&page=${page}`);
   }
@@ -31,9 +30,4 @@ export class MovieServices {
   getMovies(media_type: string, status: string) {
     return this.http.get(`${this.baseUrl}/${media_type}/${status}?language=en-US`);
   }
-
-  searchMovie(query: string) {
-    return this.http.get(`${this.baseUrl}/search/multi?query=${query}&language=en-US`);
-  }
-
 }
