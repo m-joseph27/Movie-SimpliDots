@@ -1,6 +1,6 @@
 <div class="card-container">
   <div *ngFor="let movie of movies">
-    <p-card class="parent-card" [header]="movie.title || movie.name" [subheader]="movie.release_date || movie.first_air_date" [style]="{ width: '360px' }">
+    <p-card class="parent-card" [header]="movie.title || movie.name" [subheader]="movie.release_date || movie.first_air_date | customDate" [style]="{ width: '360px' }">
       <ng-template pTemplate="header">
         <img [alt]="movie.title" src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" />
       </ng-template>

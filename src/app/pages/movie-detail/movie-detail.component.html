@@ -13,7 +13,7 @@
         <div class="title-head">
           <div class="title">
             <h1>{{ movieDetail.name || movieDetail.title }} <span>({{ getYear(movieDetail.first_air_date || movieDetail.release_date) }})</span></h1>
-            <p>{{ formatDate(movieDetail.first_air_date || movieDetail.release_date) }} - <span>{{ movieDetail?.genres[0].name }}</span> </p>
+            <p>{{ movieDetail.first_air_date || movieDetail.release_date | customDate }} - <span>{{ movieDetail?.genres[0].name }}</span> </p>
           </div>
         </div>
         <div class="action">

@@ -9,6 +9,7 @@ import { LocalStorageService } from '../../services/local-storage/local-storage.
 import { CasterComponent } from '../../components/caster/caster.component';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { CustomDatePipe } from '../../services/formater/custom-date.pipe';
 
 @Component({
   selector: 'app-movie-detail',
@@ -20,6 +21,7 @@ import { MessageService } from 'primeng/api';
     ButtonModule,
     CasterComponent,
     ToastModule,
+    CustomDatePipe
   ],
   templateUrl: './movie-detail.component.html',
   styleUrl: './movie-detail.component.scss',
@@ -78,10 +80,6 @@ export class MovieDetailComponent {
 
   getYear(dateString: string): string {
     return dateString.substring(0, 4);
-  }
-
-  formatDate(date: any) {
-    return this.datePipe.transform(date, 'dd/MM/yyyy');
   }
 
   showAddSuccess() {

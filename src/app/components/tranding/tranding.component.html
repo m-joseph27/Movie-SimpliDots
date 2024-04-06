@@ -7,7 +7,7 @@
         </div>
         <div>
           <h4 class="mb-1">{{ movie.title || movie.name }}</h4>
-          <p class="mt-0 mb-2">{{ movie.release_date || movie.first_air_date }}</p>
+          <p class="mt-0 mb-2">{{ movie.release_date || movie.first_air_date | customDate }}</p>
           <div class="mt-4 flex align-items-center justify-content-center btn-card">
             <p-button icon="pi pi-search" [rounded]="false" label="Detail" (onClick)="onDetailClick(movie)" />
           </div>

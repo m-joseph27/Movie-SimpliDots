@@ -3,6 +3,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
+import { CustomDatePipe } from '../../services/formater/custom-date.pipe';
 
 @Component({
   selector: 'app-tranding',
@@ -10,10 +11,11 @@ import { Router } from '@angular/router';
   imports: [
     CarouselModule,
     TagModule,
-    ButtonModule
+    ButtonModule,
+    CustomDatePipe
   ],
   templateUrl: './tranding.component.html',
-  styleUrl: './tranding.component.scss'
+  styleUrl: './tranding.component.scss',
 })
 export class TrandingComponent implements OnChanges {
   @Input() data: any;
@@ -21,7 +23,7 @@ export class TrandingComponent implements OnChanges {
   responsiveOptions: any[] | undefined;
 
   constructor (
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnChanges() {}
