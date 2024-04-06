@@ -29,6 +29,7 @@ export class PlaylistComponent implements OnInit, AfterViewInit, OnDestroy {
   movies: any[] = [];
   page: number = 1;
   spinning: boolean = true;
+  secondSpinning: boolean = true;
 
   @ViewChild('scrollingContainer') scrollingContainer!: ElementRef;
 
@@ -82,6 +83,7 @@ export class PlaylistComponent implements OnInit, AfterViewInit, OnDestroy {
   loadTrandingMovies() {
     this.movieServices.getTrendingMovies().subscribe(tren => {
       this.trending = tren.results;
+      this.secondSpinning = false;
     });
   }
 }

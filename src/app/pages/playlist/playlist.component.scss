@@ -14,15 +14,19 @@ hr {
   margin-bottom: 50px;
   .on-tranding {
     padding: 20px 20px;
-    .progress {
+    .progress1 {
       display: flex;
       justify-content: center;
     }
   }
   .now-showing {
-    padding: 20px 20px;
+    padding: 20px 50px;
     max-height: 7000px;
     overflow-y: auto;
+    .progress2 {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .line-break {

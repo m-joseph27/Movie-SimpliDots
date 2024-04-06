@@ -9,7 +9,12 @@
   </div>
 
   <div class="movies-card">
-    <app-playing [movies]="allMovies.results"></app-playing>
+    <div>
+      <p-progressSpinner *ngIf="spinning"></p-progressSpinner>
+    </div>
+    <div *ngIf="!spinning">
+      <app-playing [movies]="allMovies"></app-playing>
+    </div>
   </div>
 
 </div>

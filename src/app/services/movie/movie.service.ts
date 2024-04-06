@@ -13,7 +13,7 @@ export class MovieServices {
 
 
   getAllMovies(page: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/movie/now_playing?language=id-ID&page=${page}`);
+    return this.http.get(`${this.baseUrl}/movie/now_playing?language=en-US&page=${page}`);
   }
 
   getTrendingMovies(): Observable<any> {

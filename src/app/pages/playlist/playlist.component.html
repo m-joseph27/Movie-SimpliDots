@@ -8,7 +8,7 @@
     <div class="line3"></div>
   </div>
   <div class="on-tranding">
-    <div class="progress">
+    <div class="progress1">
       <p-progressSpinner *ngIf="spinning"></p-progressSpinner>
     </div>
     <div *ngIf="!spinning">
@@ -23,7 +23,12 @@
     <div class="line3"></div>
   </div>
   <div class="now-showing" #scrollingContainer>
-    <app-playing [movies]="movies"></app-playing>
+    <div class="progress2">
+      <p-progressSpinner *ngIf="secondSpinning"></p-progressSpinner>
+    </div>
+    <div>
+      <app-playing *ngIf="!secondSpinning" [movies]="movies"></app-playing>
+    </div>
   </div>
 </div>
 
