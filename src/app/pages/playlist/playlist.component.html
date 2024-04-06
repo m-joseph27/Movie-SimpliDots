@@ -8,7 +8,12 @@
     <div class="line3"></div>
   </div>
   <div class="on-tranding">
-    <app-tranding [data]="trending"></app-tranding>
+    <div class="progress">
+      <p-progressSpinner *ngIf="spinning"></p-progressSpinner>
+    </div>
+    <div *ngIf="!spinning">
+      <app-tranding [data]="trending"></app-tranding>
+    </div>
   </div>
 
   <h3 class="text-heading">Now Showing</h3>

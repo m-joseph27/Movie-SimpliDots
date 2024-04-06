@@ -18,8 +18,9 @@
         </div>
         <div class="action">
           <div class="add-to-fav">
-            <p-button *ngIf="!isAdded" (click)="addFavorite()" severity="info" label="Tambahkan Ke Favorite" icon="pi pi-check"></p-button>
-            <p-button *ngIf="isAdded" (onClick)="deleteFavorite()" severity="danger" label="Hapus Dari Favorite" icon="pi pi-check"></p-button>
+            <p-toast></p-toast>
+            <p-button *ngIf="!isAdded" (click)="addFavorite(); showAddSuccess()" severity="info" label="Tambahkan Ke Favorite" icon="pi pi-check"></p-button>
+            <p-button *ngIf="isAdded" (onClick)="deleteFavorite(); showRemoveSuccess()" severity="danger" label="Hapus Dari Favorite" icon="pi pi-check"></p-button>
           </div>
         </div>
         <div class="desc-info">
@@ -30,15 +31,42 @@
             <h1>Kilasan Singkat</h1>
             <p>{{ movieDetail.overview }}</p>
           </div>
-          <div class="production-home"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="caster">
-    <h3>Pemeran</h3>
+  <div class="line-break">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
   </div>
+
+  <div class="movie-info-container">
+    <div class="movie-info">
+      <div class="status-release">
+        <h5>Status</h5>
+        <p>{{ movieDetail.status || '-'}}</p>
+      </div>
+      <div class="genre">
+        <h5>Genre</h5>
+        <p>{{ movieDetail?.genres[0].name || '-'}}</p>
+      </div>
+      <div class="languange">
+        <h5>Languange</h5>
+        <p>{{ movieDetail?.spoken_languages[0].name || '-' }}</p>
+      </div>
+      <div class="budget">
+        <h5>Budget</h5>
+        <p>{{ movieDetail.budget | currency:'USD':'code':'4.2-2' || '-' }}</p>
+      </div>
+      <div class="revenue">
+        <h5>Revenue</h5>
+        <p>{{ movieDetail.revenue | currency:'USD':'code':'4.2-2' || '-' }}</p>
+      </div>
+    </div>
+  </div>
+
   <div class="line-break">
     <div class="line1"></div>
     <div class="line2"></div>
@@ -47,9 +75,8 @@
 
   <div class="caster-info">
     <div class="caster">
-      <app-tranding [data]="credits"></app-tranding>
+      <app-caster [data]="credits"></app-caster>
     </div>
-    <div class="info"></div>
   </div>
 </div>
 

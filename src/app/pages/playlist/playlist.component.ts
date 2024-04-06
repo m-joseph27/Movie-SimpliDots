@@ -5,6 +5,8 @@ import { PlayingComponent } from '../../components/playing/playing.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { MovieServices } from '../../services/movie/movie.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-playlist',
@@ -14,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
     TrandingComponent,
     PlayingComponent,
     FooterComponent,
-    HttpClientModule
+    HttpClientModule,
+    ProgressSpinnerModule,
+    CommonModule
   ],
   templateUrl: './playlist.component.html',
   styleUrl: './playlist.component.scss',
@@ -24,6 +28,7 @@ export class PlaylistComponent implements OnInit, AfterViewInit, OnDestroy {
   trending: any[] = [];
   movies: any[] = [];
   page: number = 1;
+  spinning: boolean = true;
 
   @ViewChild('scrollingContainer') scrollingContainer!: ElementRef;
 
@@ -70,6 +75,7 @@ export class PlaylistComponent implements OnInit, AfterViewInit, OnDestroy {
     this.movieServices.getAllMovies(this.page).subscribe(data => {
       this.movies = [...this.movies, ...data.results];
       this.page++;
+      this.spinning = false;
     });
   }
 

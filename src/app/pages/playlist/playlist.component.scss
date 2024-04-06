@@ -14,6 +14,10 @@ hr {
   margin-bottom: 50px;
   .on-tranding {
     padding: 20px 20px;
+    .progress {
+      display: flex;
+      justify-content: center;
+    }
   }
   .now-showing {
     padding: 20px 20px;

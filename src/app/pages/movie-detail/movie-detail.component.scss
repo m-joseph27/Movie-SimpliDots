@@ -75,6 +75,27 @@
   }
 }
 
-.caster {
-  padding: 20px 20px;
+.caster-info {
+  margin-bottom: 80px;
+  .caster {
+    padding: 10px 50px;
+  }
+}
+
+.movie-info-container {
+  width: 100vw;
+  padding: 20px 40px;
+  .movie-info {
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    padding: 20px 20px;
+    line-height: 0px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+  }
 }

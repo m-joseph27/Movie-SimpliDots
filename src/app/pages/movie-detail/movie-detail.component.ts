@@ -6,7 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { LocalStorageService } from '../../services/local-storage/local-storage.service';
-import { TrandingComponent } from '../../components/tranding/tranding.component';
+import { CasterComponent } from '../../components/caster/caster.component';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-movie-detail',
@@ -16,11 +18,12 @@ import { TrandingComponent } from '../../components/tranding/tranding.component'
     HttpClientModule,
     CommonModule,
     ButtonModule,
-    TrandingComponent
+    CasterComponent,
+    ToastModule,
   ],
   templateUrl: './movie-detail.component.html',
   styleUrl: './movie-detail.component.scss',
-  providers: [ MovieServices, DatePipe ]
+  providers: [ MovieServices, DatePipe, MessageService ]
 })
 
 export class MovieDetailComponent {
@@ -36,7 +39,8 @@ export class MovieDetailComponent {
     private movieServices: MovieServices,
     private route: ActivatedRoute,
     private datePipe: DatePipe,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit() {
@@ -81,4 +85,11 @@ export class MovieDetailComponent {
     return this.datePipe.transform(date, 'dd/MM/yyyy');
   }
 
+  showAddSuccess() {
+    this.messageService.add({ severity: 'success', summary: 'Berhasil', detail: 'Film ditambahkan ke favorite' });
+  }
+
+  showRemoveSuccess() {
+    this.messageService.add({ severity: 'success', summary: 'Berhasil', detail: 'Film dihapus dari favorite' });
+  }
 }

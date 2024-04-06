@@ -1,0 +1,17 @@
+.card {
+  img {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+  }
+
+  h4 {
+    line-height: 5px;
+  }
+
+  p {
+    color: var(--grey);
+    line-height: 5px;
+    font-size: 12px;
+  }
+}
