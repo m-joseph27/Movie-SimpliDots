@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { FormatTitlePipe } from '../../services/formater/formatter.pipe';
 
 @Component({
   selector: 'app-movie',
@@ -15,7 +16,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     PlayingComponent,
     FooterComponent,
     ProgressSpinnerModule,
-    CommonModule
+    CommonModule,
+    FormatTitlePipe
   ],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss',

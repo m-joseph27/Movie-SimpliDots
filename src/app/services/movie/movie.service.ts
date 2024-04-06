@@ -32,4 +32,8 @@ export class MovieServices {
     return this.http.get(`${this.baseUrl}/${media_type}/${status}?language=en-US`);
   }
 
+  searchMovie(query: string) {
+    return this.http.get(`${this.baseUrl}/search/multi?query=${query}&language=en-US`);
+  }
+
 }

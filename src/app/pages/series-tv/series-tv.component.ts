@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CommonModule } from '@angular/common';
+import { FormatTitlePipe } from '../../services/formater/formatter.pipe';
 
 @Component({
   selector: 'app-series-tv',
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     HttpClientModule,
     ProgressSpinnerModule,
-    CommonModule
+    CommonModule,
+    FormatTitlePipe
   ],
   templateUrl: './series-tv.component.html',
   styleUrl: './series-tv.component.scss',
